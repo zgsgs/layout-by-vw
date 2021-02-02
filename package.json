@@ -1,7 +1,7 @@
 {
   "name": "layout-by-vw",
   "version": "1.0.0",
-  "description": "用vw单位自适应布局",
+  "description": "vm和rem实现自适应布局",
   "main": "index.html",
   "scripts": {
     "start": "serve",
