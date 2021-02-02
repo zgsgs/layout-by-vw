@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/index1.css" />
+    <script src="js/jquery.min.js"></script>
+    <title>VW自适应布局方案</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2><img src="img/banner.png" alt="" /></h2>
+      </div>
+      <ul class="content" id="content"></ul>
+    </div>
+
+    <script>
+      var pageData = {
+        sections: [
+          {
+            brannerImag:
+              "http://xxx.cdn.com/B1PNLZKXXXXXaTXXXXXXXXXXXX-750-481.jpg",
+            items: [
+              {
+                itemLink: "##",
+                imgSrc: "https://placeimg.com/350/350/people/grayscale",
+                poductName:
+                  "Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G093",
+                price: "299.06",
+                preferential: "满400减100",
+                activityType: "1小时内热卖5885件",
+                shopLink: "##",
+                activeName: "马上抢!"
+              },
+              {
+                itemLink: "##",
+                imgSrc: "https://placeimg.com/350/350/people/grayscale",
+                poductName:
+                  "Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G093",
+                price: "299.06",
+                preferential: "满400减100",
+                activityType: "1小时内热卖5885件",
+                shopLink: "##",
+                activeName: "马上抢！"
+              },
+              {
+                itemLink: "##",
+                imgSrc: "https://placeimg.com/350/350/people/grayscale",
+                poductName:
+                  "Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G093",
+                price: "299.06",
+                preferential: "满400减100",
+                activityType: "1小时内热卖5885件",
+                shopLink: "##",
+                activeName: "马上抢！"
+              }
+            ]
+          }
+        ]
+      };
+
+      function render() {
+        pageData.sections.forEach((item1, index) => {
+          $(".item-section_header>img").attr("src", item1.brannerImag);
+          let html = "";
+          item1.items.forEach((item2, index2) => {
+            html += `<li class="flag" role="link" href="${item2.itemLink}">
+                        <a class="figure flag-item" href="${item2.itemLink}">
+                          <img src="${item2.imgSrc}" alt="${item2.poductName}">
+                        </a>
+                        <div class="figcaption flag-item">
+                          <div class="flag-title"><a href="${item2.itemLink}" title="">${item2.poductName}</a></div>
+                          <div class="flag-price"><span>双11价</span><strong>¥${item2.price}</strong><small>(${item2.preferential})</small></div>
+                          <div class="flag-type">${item2.activityType}</div>
+                          <a class="flag-btn" href="${item2.shopLink}">${item2.activeName}</a>
+                        </div>
+                      </li>`;
+          });
+          $("#content").html(html);
+        });
+      }
+
+      render();
+    </script>
+  </body>
+</html>
